@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AniMarker</string>
+    <string name="button_addAnimarker">Add Animarker</string>
+    <string name="hint_animarkerTitle">Species Spotted</string>
+    <string name="hint_animarkerDescription">Description </string>
+    <string name="menu_addAnimarker">Add</string>
+    <string name="menu_cancelAnimarker">Cancel</string>
+    <string name="todo">TODO</string>
+</resources>
