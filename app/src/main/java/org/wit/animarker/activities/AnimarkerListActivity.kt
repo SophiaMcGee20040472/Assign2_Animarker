@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.wit.animarker.R
 import org.wit.animarker.adapters.AnimarkerAdapter
+import org.wit.animarker.adapters.AnimarkerListener
 import org.wit.animarker.databinding.ActivityAnimarkerListBinding
 import org.wit.animarker.main.MainApp
+import org.wit.animarker.models.AnimarkerModel
 
-class AnimarkerListActivity : AppCompatActivity() {
+class AnimarkerListActivity : AppCompatActivity(), AnimarkerListener {
 
     lateinit var app: MainApp
     private lateinit var binding: ActivityAnimarkerListBinding
@@ -22,12 +24,11 @@ class AnimarkerListActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.toolbar.title = title
         setSupportActionBar(binding.toolbar)
-
         app = application as MainApp
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = AnimarkerAdapter(app.animarkers)
+        binding.recyclerView.adapter = AnimarkerAdapter(app.animarkers.findAll(),this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -43,5 +44,10 @@ class AnimarkerListActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+    override fun onAnimarkerClick(animarker: AnimarkerModel) {
+        val launcherIntent = Intent(this, AnimarkerActivity::class.java)
+        launcherIntent.putExtra("animarker_edit", animarker)
+        startActivityForResult(launcherIntent,0)
     }
 }
