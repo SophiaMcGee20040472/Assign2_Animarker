@@ -4,6 +4,8 @@
     <string name="hint_animarkerTitle">Species Spotted</string>
     <string name="hint_animarkerDescription">Description </string>
     <string name="menu_addAnimarker">Add</string>
+    <string name="save_animarker"> Save Animarker </string>
+    <string name="enter_animarker_title"> Please enter a Animarker Title </string>
     <string name="menu_cancelAnimarker">Cancel</string>
     <string name="todo">TODO</string>
 </resources>
