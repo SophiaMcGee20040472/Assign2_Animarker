@@ -14,5 +14,7 @@ class MainApp : Application() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
         i("Animarker started")
+
     }
+
 }
