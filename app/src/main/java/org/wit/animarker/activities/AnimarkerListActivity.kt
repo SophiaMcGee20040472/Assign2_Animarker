@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.wit.animarker.R
@@ -17,18 +19,22 @@ class AnimarkerListActivity : AppCompatActivity(), AnimarkerListener {
 
     lateinit var app: MainApp
     private lateinit var binding: ActivityAnimarkerListBinding
+    private lateinit var refreshIntentLauncher : ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAnimarkerListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.toolbar.title = title
-        setSupportActionBar(binding.toolbar)
         app = application as MainApp
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = AnimarkerAdapter(app.animarkers.findAll(),this)
+        binding.toolbar.title = title
+        setSupportActionBar(binding.toolbar)
+        getSupportActionBar()?.setDisplayShowTitleEnabled(false)
+
+        registerRefreshCallback()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -41,7 +47,7 @@ class AnimarkerListActivity : AppCompatActivity(), AnimarkerListener {
         when (item.itemId) {
             R.id.item_add -> {
                 val launcherIntent = Intent(this, AnimarkerActivity::class.java)
-                startActivityForResult(launcherIntent,0)
+                refreshIntentLauncher.launch(launcherIntent)
             }
         }
         return super.onOptionsItemSelected(item)
@@ -49,6 +55,11 @@ class AnimarkerListActivity : AppCompatActivity(), AnimarkerListener {
     override fun onAnimarkerClick(animarker: AnimarkerModel) {
         val launcherIntent = Intent(this, AnimarkerActivity::class.java)
         launcherIntent.putExtra("animarker_edit", animarker)
-        startActivityForResult(launcherIntent,0)
+        refreshIntentLauncher.launch(launcherIntent)
+    }
+    private fun registerRefreshCallback() {
+        refreshIntentLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+            { binding.recyclerView.adapter?.notifyDataSetChanged() }
     }
 }

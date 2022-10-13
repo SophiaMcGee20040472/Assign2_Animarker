@@ -17,7 +17,7 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:background="@color/orange_100"
             android:fitsSystemWindows="true"
             app:elevation="0dip"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -37,6 +37,7 @@
             android:background="@color/white"
             android:fillViewport="true">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,49 +50,92 @@
                     android:layout_margin="8dp"
                     android:layout_marginBottom="8dp"
                     android:autofillHints=""
+                    android:fontFamily="@font/east"
                     android:hint="@string/hint_animarkerTitle"
                     android:inputType="text"
                     android:maxLength="20"
                     android:maxLines="1"
                     android:padding="2dp"
                     android:textColor="@color/purple_100"
+                    android:textColorHint="#78909C"
                     android:textSize="24sp" />
 
+                <Button
+                    android:id="@+id/chooseImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/east"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/button_addImage"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/purple_100" />
+
+                <ImageView
+                    android:id="@+id/animarkerImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/addimage" />
                 <EditText
                     android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="8dp"
                     android:autofillHints=""
+                    android:fontFamily="@font/east"
                     android:hint="@string/hint_animarkerDescription"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textColor="@color/purple_100"
+                    android:textColorHint="#78909C"
                     android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/btnAdd"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dip"
-                    android:layout_marginTop="20dip"
+                    android:layout_marginStart="20dip"
+                    android:layout_marginTop="16dip"
                     android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/east"
                     android:gravity="center"
                     android:text="@string/button_addAnimarker"
                     android:textColor="@android:color/white"
-                    android:textSize="24dp"
-                    app:backgroundTint="@android:color/holo_orange_light" />
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/purple_100" />
+                <Button
+                    android:id="@+id/deleteAnimarker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/east"
+                    app:backgroundTint="@color/orange_100"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_delete_animarker"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
                 <ImageView
-                    android:layout_marginTop="20dp"
                     android:layout_width="600dp"
                     android:layout_height="350dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo"
                     android:gravity="center"
                     android:src="@drawable/racoon1"
-                    android:contentDescription="@string/todo"
                     tools:ignore="ContentDescription" />
+
             </LinearLayout>
         </ScrollView>
 

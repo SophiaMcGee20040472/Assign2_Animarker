@@ -23,15 +23,18 @@ class AnimarkerMemStore : AnimarkerStore {
     }
 
     override fun update(animarker: AnimarkerModel) {
-        var foundAnimarker: AnimarkerModel? = animarkers.find { p -> p.id == animarker.id }
+        val foundAnimarker: AnimarkerModel? = animarkers.find { p -> p.id == animarker.id }
         if (foundAnimarker != null) {
             foundAnimarker.title = animarker.title
             foundAnimarker.description = animarker.description
             logAll()
         }
     }
-
-    private fun logAll() {
-        animarkers.forEach { i("$it") }
+    override fun delete(animarker: AnimarkerModel) {
+        animarkers.remove(animarker)
+        logAll()
+    }
+    fun logAll() {
+        animarkers.forEach{ i("$it")}
     }
 }
