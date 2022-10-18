@@ -1,14 +1,19 @@
 <resources>
     <string name="app_name">AniMarker</string>
+    <string name="menu_addAnimarker">Add</string>
+    <string name="save_animarker"> Save Animarker </string>
+    <string name="menu_cancelAnimarker">Cancel</string>
+    <string name="hint_Destination">Destination</string>
     <string name="button_addAnimarker">Add Animarker</string>
     <string name="hint_animarkerTitle">Species Spotted</string>
     <string name="hint_animarkerDescription">Description </string>
-    <string name="menu_addAnimarker">Add</string>
-    <string name="select_animarker_image">Select Animarker image</string>
     <string name="button_addImage"> Add Animal Image </string>
-    <string name="save_animarker"> Save Animarker </string>
-    <string name="enter_animarker_title"> Please enter a Animarker Title </string>
-    <string name="menu_cancelAnimarker">Cancel</string>
-    <string name="todo">TODO</string>
     <string name="button_delete_animarker">Delete Animarker</string>
+    <string name="select_animarker_image">Select Animarker image</string>
+    <string name="change_animarker_image">Change Animarker image</string>
+    <string name="enter_animarker_title"> Please enter a Animarker Title </string>
+    <string name="button_location">Set Location</string>
+    <string name="todo">TODO</string>
+    <string name="datePicker">Datepicker</string>
+    <string name="title_activity_map">Map</string>
 </resources>

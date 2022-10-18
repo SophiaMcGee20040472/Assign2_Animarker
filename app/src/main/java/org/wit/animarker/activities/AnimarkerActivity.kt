@@ -1,10 +1,13 @@
 package org.wit.animarker.activities
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.DatePicker
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +19,7 @@ import org.wit.animarker.helpers.showImagePicker
 import org.wit.animarker.main.MainApp
 import org.wit.animarker.models.AnimarkerModel
 import timber.log.Timber.i
+import java.util.*
 
 class AnimarkerActivity : AppCompatActivity() {
 
@@ -41,25 +45,50 @@ class AnimarkerActivity : AppCompatActivity() {
         registerImagePickerCallback()
 
         i("Animarker Activity started...")
+        registerImagePickerCallback()
 
+ /*       val datePicker = findViewById<DatePicker>(R.id.datePicker)
+        val today = Calendar.getInstance()
+        datePicker.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH),
+            today.get(Calendar.DAY_OF_MONTH)
+
+        ) { view, year, month, day ->
+            val month = month + 1
+            val msg = "You Selected: $day/$month/$year"
+            Toast.makeText(this@AnimarkerActivity, msg, Toast.LENGTH_SHORT).show()
+        }*/
 
         if (intent.hasExtra("animarker_edit")) {
             edit = true
             animarker = intent.extras?.getParcelable("animarker_edit")!!
             binding.animarkerTitle.setText(animarker.title)
             binding.description.setText(animarker.description)
+            binding.destination.setText(animarker.destination)
             binding.btnAdd.setText(R.string.save_animarker)
             binding.deleteAnimarker.setText(R.string.button_delete_animarker)
+ /*           datePicker.init(animarker.dateAvailable.year, animarker.dateAvailable.monthValue,
+                animarker.dateAvailable.dayOfMonth
 
+            ) { view, year, month, day ->
+                val month = month + 1
+                val msg = "You Selected: $day/$month/$year"
+                Toast.makeText(this@AnimarkerActivity, msg, Toast.LENGTH_SHORT).show()
+            }*/
             // only visible in edit mode
             binding.deleteAnimarker.setVisibility(View.VISIBLE)
+            Picasso.get()
+                .load(animarker.image)
+                .into(binding.animarkerImage)
+            if (animarker.image != Uri.EMPTY) {
+                binding.chooseImage.setText(R.string.change_animarker_image)
+            }
         }
-
 
         binding.btnAdd.setOnClickListener() {
             animarker.title = binding.animarkerTitle.text.toString()
             animarker.description = binding.description.text.toString()
-            if (animarker.title.isNotEmpty()) {
+            animarker.destination = binding.destination.text.toString()
+            if (animarker.title.isNotEmpty() && animarker.description.isNotEmpty() && animarker.destination.isNotEmpty()) {
                 if (edit) {
                     app.animarkers.update(animarker.copy())
                 } else {
@@ -83,7 +112,6 @@ class AnimarkerActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_animarker, menu)
         return super.onCreateOptionsMenu(menu)
@@ -101,7 +129,7 @@ class AnimarkerActivity : AppCompatActivity() {
         imageIntentLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult())
             { result ->
-                when (result.resultCode) {
+                when(result.resultCode){
                     RESULT_OK -> {
                         if (result.data != null) {
                             i("Got Result ${result.data!!.data}")
@@ -109,12 +137,11 @@ class AnimarkerActivity : AppCompatActivity() {
                             Picasso.get()
                                 .load(animarker.image)
                                 .into(binding.animarkerImage)
+                            binding.chooseImage.setText(R.string.change_animarker_image)
                         } // end of if
                     }
-                    RESULT_CANCELED -> {}
-                    else -> {}
+                    RESULT_CANCELED -> { } else -> { }
                 }
             }
     }
 }
-

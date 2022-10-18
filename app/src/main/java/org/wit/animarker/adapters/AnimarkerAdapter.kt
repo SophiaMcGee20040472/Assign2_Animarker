@@ -3,6 +3,7 @@ package org.wit.animarker.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import org.wit.animarker.databinding.CardAnimarkerBinding
 import org.wit.animarker.models.AnimarkerModel
 interface AnimarkerListener {
@@ -32,6 +33,8 @@ class AnimarkerAdapter constructor(private var animarkers: List<AnimarkerModel>,
         fun bind(animarker: AnimarkerModel, listener: AnimarkerListener) {
             binding.animarkerTitle.text = animarker.title
             binding.description.text = animarker.description
+            binding.animarkerTitle.text = animarker.destination
+            Picasso.get().load(animarker.image).resize(200,200).into(binding.imageIcon)
             binding.root.setOnClickListener { listener.onAnimarkerClick(animarker) }
         }
     }
