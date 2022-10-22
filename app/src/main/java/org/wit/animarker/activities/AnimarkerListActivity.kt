@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import org.wit.animarker.R
 import org.wit.animarker.adapters.AnimarkerAdapter
 import org.wit.animarker.adapters.AnimarkerListener
+import org.wit.animarker.databinding.ActivityAnimarkerBinding
 import org.wit.animarker.databinding.ActivityAnimarkerListBinding
 import org.wit.animarker.main.MainApp
 import org.wit.animarker.models.AnimarkerModel
@@ -25,14 +26,14 @@ class AnimarkerListActivity : AppCompatActivity(), AnimarkerListener {
         super.onCreate(savedInstanceState)
         binding = ActivityAnimarkerListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.toolbar.title = title
+        setSupportActionBar(binding.toolbar)
+
         app = application as MainApp
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = AnimarkerAdapter(app.animarkers.findAll(),this)
-        binding.toolbar.title = title
-        setSupportActionBar(binding.toolbar)
-        getSupportActionBar()?.setDisplayShowTitleEnabled(false)
+        loadAnimarkers()
 
         registerRefreshCallback()
     }
@@ -41,7 +42,6 @@ class AnimarkerListActivity : AppCompatActivity(), AnimarkerListener {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -52,14 +52,25 @@ class AnimarkerListActivity : AppCompatActivity(), AnimarkerListener {
         }
         return super.onOptionsItemSelected(item)
     }
+
     override fun onAnimarkerClick(animarker: AnimarkerModel) {
         val launcherIntent = Intent(this, AnimarkerActivity::class.java)
         launcherIntent.putExtra("animarker_edit", animarker)
         refreshIntentLauncher.launch(launcherIntent)
     }
+
     private fun registerRefreshCallback() {
         refreshIntentLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult())
-            { binding.recyclerView.adapter?.notifyDataSetChanged() }
+            { loadAnimarkers() }
+    }
+
+    private fun loadAnimarkers() {
+        showAnimarkers(app.animarkers.findAll())
+    }
+
+    fun showAnimarkers (animarkers: List<AnimarkerModel>) {
+        binding.recyclerView.adapter = AnimarkerAdapter(animarkers, this)
+        binding.recyclerView.adapter?.notifyDataSetChanged()
     }
 }

@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\sophi\.android\avd\tiramisu.avd" />
+            <value value="C:\Users\sophi\.android\avd\Pixtir.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-10-18T13:18:19.840797100Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-10-20T21:46:01.308948900Z" />
   </component>
 </project>
