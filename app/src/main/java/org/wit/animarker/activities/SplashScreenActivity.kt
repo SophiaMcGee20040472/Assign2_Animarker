@@ -17,7 +17,7 @@ class SplashScreenActivity : AppCompatActivity() {
         handler.postDelayed({
 
             // Delay and Start Activity
-            val intent = Intent(this,AnimarkerListActivity::class.java)
+            val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
             finish()
         } , 6000) // here we're delaying to startActivity after 3seconds

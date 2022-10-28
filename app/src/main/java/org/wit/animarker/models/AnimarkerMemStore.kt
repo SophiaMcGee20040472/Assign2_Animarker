@@ -27,6 +27,7 @@ class AnimarkerMemStore : AnimarkerStore {
         if (foundAnimarker != null) {
             foundAnimarker.title = animarker.title
             foundAnimarker.description = animarker.description
+            foundAnimarker.destination = animarker.destination
             foundAnimarker.image = animarker.image
             foundAnimarker.lat = animarker.lat
             foundAnimarker.lng = animarker.lng

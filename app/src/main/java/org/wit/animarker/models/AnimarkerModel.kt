@@ -2,6 +2,7 @@ package org.wit.animarker.models
 
 import android.net.Uri
 import android.os.Parcelable
+import android.widget.RatingBar
 import kotlinx.parcelize.Parcelize
 import java.time.LocalDate
 

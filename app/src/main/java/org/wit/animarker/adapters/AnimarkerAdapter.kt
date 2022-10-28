@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import org.wit.animarker.databinding.CardAnimarkerBinding
 import org.wit.animarker.models.AnimarkerModel
+import org.wit.animarker.models.UserModel
+
 interface AnimarkerListener {
     fun onAnimarkerClick(animarker: AnimarkerModel)
 }
-class AnimarkerAdapter constructor(private var animarkers: List<AnimarkerModel>,
-                                   private val listener: AnimarkerListener) :
+
+class AnimarkerAdapter constructor(private var animarkers: List<AnimarkerModel>, private val listener: AnimarkerListener) :
     RecyclerView.Adapter<AnimarkerAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
@@ -33,7 +35,7 @@ class AnimarkerAdapter constructor(private var animarkers: List<AnimarkerModel>,
         fun bind(animarker: AnimarkerModel, listener: AnimarkerListener) {
             binding.animarkerTitle.text = animarker.title
             binding.description.text = animarker.description
-            binding.animarkerTitle.text = animarker.destination
+            binding.destination.text= animarker.destination
             Picasso.get().load(animarker.image).resize(200,200).into(binding.imageIcon)
             binding.root.setOnClickListener { listener.onAnimarkerClick(animarker) }
         }

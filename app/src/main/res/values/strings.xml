@@ -16,6 +16,20 @@
     <string name="rate_name">RatingkBarInKotlin</string>
     <string name="todo">TODO</string>
     <string name="datePicker">Datepicker</string>
+    <string name="login">LOGIN</string>
+    <string name="firstName"> FIRST NAME</string>
+    <string name="lastName"> LAST NAME</string>
+    <string name="user_email">EMAIL</string>
+    <string name="user_password">PASSWORD</string>
+    <string name="login_button">LOGIN</string>
+    <string name="addAnimarkerHeader">Add a AnimarkerHeading</string>
+    <string name="signup">SIGN UP</string>
     <string name="title_activity_maps">Map</string>
     <string name="submit_rating">Submit Rating</string>
+    <string name="Species_Spotted">Species Spotted</string>
+
+    <string name="menu_search">Search Menu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_name">FIRST NAME</string>
 </resources>

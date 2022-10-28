@@ -68,7 +68,6 @@ class AnimarkerActivity : AppCompatActivity() {
         val today = Calendar.getInstance()
         datePicker.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH),
             today.get(Calendar.DAY_OF_MONTH)
-
         ) { view, year, month, day ->
             val month = month + 1
             val msg = "You Selected: $day/$month/$year"
@@ -96,14 +95,13 @@ class AnimarkerActivity : AppCompatActivity() {
             binding.btnAdd.setText(R.string.save_animarker)
             binding.deleteAnimarker.setText(R.string.button_delete_animarker)
 
-    /*        datePicker.init(animarker.dateAvailable.year, animarker.dateAvailable.monthValue,
-                animarker.dateAvailable.dayOfMonth
-
-            ) { view, year, month, day ->
-                val month = month + 1
-                val msg = "You Selected: $day/$month/$year"
-                Toast.makeText(this@AnimarkerActivity, msg, Toast.LENGTH_SHORT).show()
-            }*/
+            /*        datePicker.init(animarker.dateAvailable.year, animarker.dateAvailable.monthValue,
+                        animarker.dateAvailable.dayOfMonth
+                    ) { view, year, month, day ->
+                        val month = month + 1
+                        val msg = "You Selected: $day/$month/$year"
+                        Toast.makeText(this@AnimarkerActivity, msg, Toast.LENGTH_SHORT).show()
+                    }*/
             // only visible in edit mode
             binding.deleteAnimarker.setVisibility(View.VISIBLE)
             Picasso.get()

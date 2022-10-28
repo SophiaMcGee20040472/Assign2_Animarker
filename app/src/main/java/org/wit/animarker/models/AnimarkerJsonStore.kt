@@ -44,8 +44,8 @@ class AnimarkerJSONStore(private val context: Context) : AnimarkerStore {
         var foundAnimarker: AnimarkerModel? = animarkers.find{ l -> l.id == animarker.id}
         if (foundAnimarker != null) {
             foundAnimarker.title = animarker.title
-            foundAnimarker.description = animarker.description
             foundAnimarker.destination = animarker.destination
+            foundAnimarker.description = animarker.description
             //foundAnimarker.dateAvailable = animarker.dateAvailable
             foundAnimarker.image = animarker.image
             logAll()
