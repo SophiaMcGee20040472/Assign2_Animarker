@@ -11,7 +11,7 @@
         android:id="@+id/fox"
         android:layout_width="550dp"
         android:layout_height="550dp"
-        android:src="@drawable/racoon"
+        android:src="@drawable/racoony"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

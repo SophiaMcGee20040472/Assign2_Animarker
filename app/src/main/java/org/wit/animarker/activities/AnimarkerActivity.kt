@@ -1,5 +1,6 @@
 package org.wit.animarker.activities
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -23,6 +24,7 @@ import org.wit.animarker.main.MainApp
 import org.wit.animarker.models.AnimarkerModel
 import org.wit.animarker.models.Location
 import timber.log.Timber.i
+import java.time.LocalDate
 import java.util.*
 
 class AnimarkerActivity : AppCompatActivity() {
@@ -35,7 +37,6 @@ class AnimarkerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         var edit = false
 
         binding = ActivityAnimarkerBinding.inflate(layoutInflater)
@@ -63,8 +64,7 @@ class AnimarkerActivity : AppCompatActivity() {
         registerImagePickerCallback()
 
 
-
-        /*val datePicker = findViewById<DatePicker>(R.id.datePicker)
+/*        val datePicker = findViewById<DatePicker>(R.id.datePicker)
         val today = Calendar.getInstance()
         datePicker.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH),
             today.get(Calendar.DAY_OF_MONTH)
@@ -72,8 +72,26 @@ class AnimarkerActivity : AppCompatActivity() {
             val month = month + 1
             val msg = "You Selected: $day/$month/$year"
             Toast.makeText(this@AnimarkerActivity, msg, Toast.LENGTH_SHORT).show()
+        }*/
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+        binding.datepicker.setOnClickListener {
+            val dpd = DatePickerDialog(
+                this, { _, mYear, mMonth, mDay ->
+                    val mMonth = mMonth + 1
+                    binding.animarkerDate.text = "$mDay/$mMonth/$mYear"
+                },
+                year,
+                month,
+                day
+            )
+            //show dialog
+            dpd.show()
         }
-*/
+
+
         registerMapCallback()
         binding.animarkerLocation.setOnClickListener {
             val location = Location(52.245696, -7.139102, 15f)
@@ -94,6 +112,8 @@ class AnimarkerActivity : AppCompatActivity() {
             binding.destination.setText(animarker.destination)
             binding.btnAdd.setText(R.string.save_animarker)
             binding.deleteAnimarker.setText(R.string.button_delete_animarker)
+            binding.animarkerDate.text = animarker.date
+            binding.datepicker.setText(R.string.select_date)
 
             /*        datePicker.init(animarker.dateAvailable.year, animarker.dateAvailable.monthValue,
                         animarker.dateAvailable.dayOfMonth
@@ -116,6 +136,9 @@ class AnimarkerActivity : AppCompatActivity() {
             animarker.title = binding.animarkerTitle.text.toString()
             animarker.description = binding.description.text.toString()
             animarker.destination = binding.destination.text.toString()
+            animarker.date = binding.animarkerDate.text.toString()
+            //val dateSelected = LocalDate.of(binding.datePicker.year, binding.datePicker.month, binding.datePicker.dayOfMonth)
+            //animarker.dateAvailable = dateSelected
             if (animarker.title.isNotEmpty() && animarker.description.isNotEmpty() && animarker.destination.isNotEmpty()) {
                 if (edit) {
                     app.animarkers.update(animarker.copy())

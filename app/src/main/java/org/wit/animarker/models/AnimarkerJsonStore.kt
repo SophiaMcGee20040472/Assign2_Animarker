@@ -46,7 +46,7 @@ class AnimarkerJSONStore(private val context: Context) : AnimarkerStore {
             foundAnimarker.title = animarker.title
             foundAnimarker.destination = animarker.destination
             foundAnimarker.description = animarker.description
-            //foundAnimarker.dateAvailable = animarker.dateAvailable
+            foundAnimarker.date = animarker.date
             foundAnimarker.image = animarker.image
             logAll()
         }

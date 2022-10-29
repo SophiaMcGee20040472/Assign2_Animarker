@@ -36,6 +36,7 @@ class AnimarkerAdapter constructor(private var animarkers: List<AnimarkerModel>,
             binding.animarkerTitle.text = animarker.title
             binding.description.text = animarker.description
             binding.destination.text= animarker.destination
+            binding.animarkerDate.text= animarker.date
             Picasso.get().load(animarker.image).resize(200,200).into(binding.imageIcon)
             binding.root.setOnClickListener { listener.onAnimarkerClick(animarker) }
         }

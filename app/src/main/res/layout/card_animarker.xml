@@ -11,14 +11,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/charcoal"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient2"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/imageIcon"
-            android:layout_width="152dp"
-            android:layout_height="123dp"
+            android:layout_width="166dp"
+            android:layout_height="145dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/change_animarker_image"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,12 +31,12 @@
             android:id="@+id/animarkerTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:textAlignment="viewStart"
-            android:textSize="30sp"
             android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.104"
+            app:layout_constraintHorizontal_bias="0.153"
             app:layout_constraintStart_toEndOf="@+id/imageIcon"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="A Title" />
@@ -45,35 +45,63 @@
             android:id="@+id/destination"
             android:layout_width="91dp"
             android:layout_height="55dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="36dp"
             android:textAlignment="viewStart"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintHorizontal_bias="0.138"
             app:layout_constraintStart_toEndOf="@+id/imageIcon"
             app:layout_constraintTop_toBottomOf="@id/animarkerTitle" />
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="185dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="159dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="68dp"
             android:textAlignment="viewStart"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.258"
+            app:layout_constraintHorizontal_bias="0.414"
             app:layout_constraintStart_toEndOf="@+id/imageIcon"
-            app:layout_constraintTop_toBottomOf="@id/animarkerTitle"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="A Description" />
+
+        <TextView
+            android:id="@+id/date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:paddingTop="15dp"
+            android:text="@string/hint_animarkerDate"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.152"
+            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintTop_toBottomOf="@id/animarkerTitle" />
+
+        <TextView
+            android:id="@+id/animarkerDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_label"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintTop_toBottomOf="@id/animarkerTitle" />
 
         <TextView
             android:id="@+id/submit_rating"
             android:layout_width="103dp"
             android:layout_height="23dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="92dp"
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.885"
             app:layout_constraintStart_toEndOf="@+id/imageIcon"
             app:layout_constraintTop_toBottomOf="@id/animarkerTitle"
             tools:text="Star Rating" />
