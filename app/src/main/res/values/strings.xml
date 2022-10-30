@@ -27,6 +27,7 @@
     <string name="login_button">LOGIN</string>
     <string name="addAnimarkerHeader">Add a AnimarkerHeading</string>
     <string name="signup">SIGN UP</string>
+    <string name="search_box">Type search terms here</string>
     <string name="title_activity_maps">Map</string>
     <string name="submit_rating">SUBMIT RATING</string>
     <string name="Species_Spotted">Species Spotted</string>

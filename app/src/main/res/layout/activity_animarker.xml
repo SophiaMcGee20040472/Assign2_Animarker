@@ -118,13 +118,7 @@
                     android:layout_gravity="center"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/racoon2" />
-              <!--  <DatePicker
-                    android:id="@+id/datePicker"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:datePickerMode="spinner"
-                    android:calendarViewShown="false" />-->
+
                 <Button
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
@@ -146,7 +140,7 @@
                     android:contentDescription="@string/rate_name"
                     android:numStars="5"
                     android:orientation="vertical"
-                    android:progressTint="@color/colorAccent"
+                    android:progressTint="@color/orange"
                     android:stepSize="0.5"
                     android:theme="@style/Widget.AppCompat.RatingBar" />
 

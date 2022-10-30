@@ -49,77 +49,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/gradient2"
                 android:orientation="vertical">
 
-                <TextView
+             <!--   <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="25dp"
                     android:layout_gravity="center"
-                    android:text="@string/login"
-                    android:textColor="@color/purple_100"
-                    android:textSize="35sp" />
-
-                <EditText
-                    android:id="@+id/user_email"
-                    android:layout_width="280dp"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="Email"
-                    android:hint="@string/user_email"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="30"
-                    android:maxLines="1"
-                    android:minHeight="48dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textColorHint="@color/black"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/user_password"
-                    android:layout_width="280dp"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="Email"
-                    android:hint="@string/user_password"
-                    android:inputType="textPassword"
-                    android:maxLength="30"
-                    android:maxLines="1"
-                    android:minHeight="48dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/btn_submit"
-                    android:layout_width="321dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/rounded_corner"
-                    android:backgroundTint="@color/purple_100"
                     android:fontFamily="@font/east"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:text="@string/login_button"
-                    android:textAllCaps="true"
-                    android:textSize="28sp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:padding="25dp"
                     android:text="@string/signup"
-                    android:textColor="@color/purple_100"
-                    android:textSize="35sp" />
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="35sp" />-->
 
                 <EditText
                     android:id="@+id/firstName"
                     android:layout_width="280dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
                     android:hint="@string/first_name"
@@ -127,8 +74,9 @@
                     android:maxLength="15"
                     android:maxLines="1"
                     android:minHeight="48dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
+                    android:fontFamily="@font/east"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
                     android:textSize="18sp" />
 
                 <EditText
@@ -142,8 +90,9 @@
                     android:maxLength="15"
                     android:maxLines="1"
                     android:minHeight="48dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
+                    android:fontFamily="@font/east"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
                     android:textSize="18sp" />
 
                 <EditText
@@ -157,8 +106,9 @@
                     android:maxLength="30"
                     android:maxLines="1"
                     android:minHeight="48dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
+                    android:fontFamily="@font/east"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
                     android:textSize="18sp" />
 
                 <EditText
@@ -172,19 +122,75 @@
                     android:maxLength="30"
                     android:maxLines="1"
                     android:minHeight="48dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
+                    android:fontFamily="@font/east"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
                     android:textSize="18sp" />
 
                 <Button
+
                     android:id="@+id/btn_signup"
                     android:layout_width="311dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/rounded_corner"
-                    android:backgroundTintMode="@color/orange_100"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="70dp"
+                    android:backgroundTint="@color/orange"
                     android:fontFamily="@font/east"
                     android:text="@string/signup"
+                    android:textAllCaps="true"
+                    android:textSize="28sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+       <!--         <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="25dp"
+                    android:layout_gravity="center"
+                    android:text="@string/login"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="35sp" />-->
+
+                <EditText
+                    android:id="@+id/user_email"
+                    android:layout_width="280dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Email"
+                    android:hint="@string/user_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="30"
+                    android:maxLines="1"
+                    android:minHeight="48dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/user_password"
+                    android:layout_width="280dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Email"
+                    android:hint="@string/user_password"
+                    android:inputType="textPassword"
+                    android:maxLength="30"
+                    android:maxLines="1"
+                    android:minHeight="48dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="321dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/orange"
+                    android:fontFamily="@font/east"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/login_button"
                     android:textAllCaps="true"
                     android:textSize="28sp"
                     android:textColor="@color/white"
