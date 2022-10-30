@@ -12,23 +12,23 @@ App Design
 
 ![splash](https://user-images.githubusercontent.com/83893260/198859894-d9665e13-795c-4d42-9ad0-4389f850a596.png)
 
-Chosen SplashScreen          2nd Option SplashScreen
+Chosen SplashScreen                    2nd Option SplashScreen
 
 ![login1](https://user-images.githubusercontent.com/83893260/198859903-7dbb5ccc-7d8f-4984-978a-b063ab5d3855.png)
 
-Chosen colour theme              2nd Option Colour Theme
+Chosen colour theme                    2nd Option Colour Theme
 
 ![login1](https://user-images.githubusercontent.com/83893260/198859906-039641af-ff73-4710-a100-cf18467b7aac.png)
 
-Chosen Order Layout            2nd Login Option
+Chosen Order Layout                    2nd Login Option
 
 ![listView](https://user-images.githubusercontent.com/83893260/198859908-b32b94e8-4520-4a21-b88e-74c9eb13f2a5.png)
 
-ListView chosen                   2nd List View Colour Option
+ListView chosen                        2nd List View Colour Option
 
 ![buttonList](https://user-images.githubusercontent.com/83893260/198859914-6e299526-b6ec-4dbc-b51d-dcfeed6bad8f.png)
 
-MainActivity Pg Chosen        2nd Colour Option
+MainActivity Pg Chosen                 2nd Colour Option
 
 ![Features](https://user-images.githubusercontent.com/83893260/198859928-66ecda58-ab67-4515-aa82-c59611f420f0.png)
 
